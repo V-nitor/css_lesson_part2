@@ -1,0 +1,35 @@
+:root{
+    --color1: rgb(245, 185, 185);
+    --color2: rgb(255, 0, 0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(./Assets_n2/img/lost-places-597166_1920.jpg) center/cover;
+    min-height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: var(--color1);
+}
+
+h6{
+    margin: 20px ;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--color2);
+}
+
+.card{
+    background-color: rgb(112, 114, 110, 0.4);
+    padding: 20px 40px 5px;
+    border-radius: 50px;
+    width: calc(100% - 50px);
+    /* calc= "calculation" at the top */
+}
