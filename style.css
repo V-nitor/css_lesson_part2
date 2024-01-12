@@ -1,6 +1,7 @@
 :root{
     --color1: rgb(245, 185, 185);
     --color2: rgb(255, 0, 0);
+    --color3: rgb(150, 0, 0);
 }
 
 * {
@@ -26,10 +27,66 @@ h6{
     color: var(--color2);
 }
 
+.grid-container{
+    margin: 15px 0;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.polygon-container{
+    background: linear-gradient(145deg, black 0%, rgb(100, 0, 0) 40%, var(--color2) 60%);
+    /* Info=The "linear-gradient" will learn step by step :) */
+    border-radius: 5px;
+}
+
+.shadow-polygon{
+    /* Info=Put a "height: 100%;" to give his polygon child an existence form at the bottom */
+    height: 100%;
+    /* Warning=Unlike usual, the only way to give shadow to your polygon is to go from its respective parent . See at the bottom */
+    filter: drop-shadow(7px 0px 1px rgb(255, 255, 255));
+}
+
+/* Info=See how  it work thanks to "bennettfeely.com" at the bottom of the website */
+.polygon{
+    background: url(./Assets_n2/img/halloween-7479975_640.jpg) top/cover;
+    min-height: 340px;
+    clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0%, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 100%, 35% 100%, 35% 50%, 10% 50%);
+    height: 100%;
+    /* Info=Don't forget the "height", otherwise it doesn't work */
+}
+
+input{
+    margin-bottom: 20px;
+}
+
+ul{
+    margin-top: 2rem;
+    font-family: Bloodlust;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: var(--color2);
+    word-spacing: 5px;
+}
+
+#ref{
+    text-decoration-line: none;
+    color: var(--color3);
+}
+
 .card{
     background-color: rgb(112, 114, 110, 0.4);
+    /* backdrop-filter= "To render a blurry background" at the bottom */
+    backdrop-filter: blur(1px);
     padding: 20px 40px 5px;
     border-radius: 50px;
     width: calc(100% - 50px);
     /* calc= "calculation" at the top */
+}
+
+.card:before{
+    content: 'I am the 1st for class="card" \2734';
+}
+
+.card:after{
+    content: 'I am the last for class="card" \2734';
 }
