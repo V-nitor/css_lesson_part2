@@ -46,6 +46,19 @@ h6{
     filter: drop-shadow(7px 0px 1px rgb(255, 255, 255));
 }
 
+.shadow-polygon::after{
+    content: "\2620 Do you wanna die? \2620";
+    color: var(--color2);
+    background: var(--color1);
+    font-size: 15px;
+    width: 80%;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(-10deg);
+    text-align: center;
+}
+
 /* Info=See how  it work thanks to "bennettfeely.com" at the bottom of the website */
 .polygon{
     background: url(./Assets_n2/img/halloween-7479975_640.jpg) top/cover;
@@ -53,6 +66,14 @@ h6{
     clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0%, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 100%, 35% 100%, 35% 50%, 10% 50%);
     height: 100%;
     /* Info=Don't forget the "height", otherwise it doesn't work */
+}
+
+.txt-container{
+    padding:  0 10px;
+    /* place-self="To work, the parent must  be grid's cell by nature" at the bottom */
+    place-self: center;
+    /* line-height="Margin in height between text" at the bottom */
+    line-height: 35px;
 }
 
 input{
