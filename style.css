@@ -2,12 +2,19 @@
     --color1: rgb(245, 185, 185);
     --color2: rgb(255, 0, 0);
     --color3: rgb(150, 0, 0);
+    --color4: rgb(0, 0, 0);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* ::selection="Allow to change properties when the user highlight text"  at the bottom */
+*::selection{
+    color: var(--color4);
+    background-color: var(--color3);
 }
 
 body{
@@ -74,10 +81,48 @@ h6{
     place-self: center;
     /* line-height="Margin in height between text" at the bottom */
     line-height: 35px;
+    /* Info=To create a line limit with the rest hidden, follow this 4 instructions at the bottom: */
+    display: -webkit-box;
+    -webkit-box-orient:  vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    /* justify="Can space words tidiest like a word projet" at the bottom */
+    text-align: justify;
 }
 
 input{
     margin-bottom: 20px;
+}
+
+.checkbox-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+/* :checked="Allow to change properties when the user click onto checkbox"  at the bottom */
+input[type="checkbox"]:checked + label {
+    /* Info=At the top, " + " mean same properties together and element individual WHEREAS " ~ " mean same properties together and all elements same time */
+    border: 1px solid var(--color3);
+    color: rgb(255, 255, 255);
+    background: var(--color1);
+    transform: scale(1.2);
+}
+
+label{
+    margin-bottom: 30px;
+    cursor: pointer;
+    border: 1px solid var(--color4);
+    padding: 10px;
+    color: var(--color1);
+    background: white;
+    border-radius: 20px;
+    /* Info=To made a good transition enter/out, always put it on the main element! */
+    transition: 0.5s;
 }
 
 ul{
