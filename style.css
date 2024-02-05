@@ -125,6 +125,46 @@ label{
     transition: 0.5s;
 }
 
+.e-mail{
+    text-align: center;
+}
+
+.e-mail > input{
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+    /* Info= When we want a transition with border and no. The better option is despite that to announce the border size onto element with no border BUT AFTER, give it a "transparent" instead of color */
+    border: 1px solid transparent;
+    outline: none;
+    padding: 5px;
+    color: var(--color4);
+    background: var(--color3);
+    border-radius: 20px;
+    transition: 0.5s;
+    /* Tip=To avoid the "@media screen" in width. Use a main size in %, then "max-width" and a "min-width" to your element in px... And MAGIC! His width is compatible with all screen width without break a limit form */
+    width: 25%;
+    max-width: 130px;
+    min-width: 100px;
+}
+
+/* :focus="This pseudo-class allow to change properties when the user interact with an element like a input[type="text" or "number"] or else a textarea"  at the bottom */
+input[type="text"]:focus{
+    text-decoration-line: none;
+    background: transparent;
+    border: 1px solid var(--color3);
+    border-radius: 6px;
+}
+
+.the_button{
+    text-align: center;
+}
+
+.the_button > button{
+    padding: 3px;
+    cursor: pointer;
+    border: solid 2px var(--color4)
+}
+
 ul{
     margin-top: 2rem;
     font-family: Bloodlust;
