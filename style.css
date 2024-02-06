@@ -94,18 +94,19 @@ input{
     margin-bottom: 20px;
 }
 
-.checkbox-container{
+.radio-container{
     display: flex;
     justify-content: space-evenly;
     margin-top: 30px;
+    margin-left: 65px;
 }
 
-input[type="checkbox"]{
+input[type="radio"]{
     display: none;
 }
 
 /* :checked="Allow to change properties when the user click onto checkbox"  at the bottom */
-input[type="checkbox"]:checked + label {
+input[type="radio"]:checked + label {
     /* Info=At the top, " + " mean same properties together and element individual WHEREAS " ~ " mean same properties together and all elements same time */
     border: 1px solid var(--color3);
     color: rgb(255, 255, 255);
@@ -123,21 +124,23 @@ label{
     border-radius: 20px;
     /* Info=To made a good transition enter/out, always put it on the main element! */
     transition: 0.5s;
+    /* user-select="It's like the pseudo-class '::selection'  but only for a specific element" at the bottom */
+    user-select: none;
 }
 
 .e-mail{
     text-align: center;
+    margin-left: 50px;
 }
 
 .e-mail > input{
     text-align: center;
-    text-decoration: underline;
     cursor: pointer;
     /* Info= When we want a transition with border and no. The better option is despite that to announce the border size onto element with no border BUT AFTER, give it a "transparent" instead of color */
     border: 1px solid transparent;
     outline: none;
     padding: 5px;
-    color: var(--color4);
+    color: var(--color2);
     background: var(--color3);
     border-radius: 20px;
     transition: 0.5s;
@@ -155,14 +158,28 @@ input[type="text"]:focus{
     border-radius: 6px;
 }
 
+input[type="text"]::placeholder{
+    color: var(--color4);
+    text-decoration: underline;
+}
+
 .the_button{
     text-align: center;
+    margin-left: 50px;
 }
 
 .the_button > button{
     padding: 3px;
     cursor: pointer;
-    border: solid 2px var(--color4)
+    color: var(--color2);
+    border: solid 2px var(--color4);
+}
+
+.the_button > button:hover{
+    color: var(--color4);
+    background: var(--color3);
+    letter-spacing: 6px;
+    transition: 2s;
 }
 
 ul{
