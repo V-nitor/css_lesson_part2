@@ -1,0 +1,15 @@
+/* !for whatever reason, the pseudo-class ":visited" doesn't work... WHY??? :
+
+a:visited{
+    color: var(--color4);
+
+} */
+
+-----
+
+/* !disappointing, it's a bad day today... with this function, it should have had an animation for the anchors which triggers at the same time as the button when the user pass over them:
+
+.the_button > button:hover + #ref{
+    text-align: end;
+    opacity: 0;
+} */

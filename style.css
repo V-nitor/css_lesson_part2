@@ -124,7 +124,7 @@ label{
     border-radius: 20px;
     /* Info=To made a good transition enter/out, always put it on the main element! */
     transition: 0.5s;
-    /* user-select="It's like the pseudo-class '::selection'  but only for a specific element" at the bottom */
+    /* user-select="It's like the pseudo-class '::selection' but only for a specific element" at the bottom */
     user-select: none;
 }
 
@@ -182,6 +182,15 @@ input[type="text"]::placeholder{
     transition: 2s;
 }
 
+/* :active="Allow to change properties when the user press the button in question"  at the bottom */
+.the_button > button:active{
+    color: var(--color2);
+    background: var(--color2);
+    border: solid 4px var(--color2);
+    border-radius: 44px;
+    transition: 0.1s;
+}
+
 ul{
     margin-top: 2rem;
     font-family: Bloodlust;
@@ -194,7 +203,24 @@ ul{
 #ref{
     text-decoration-line: none;
     color: var(--color3);
+    /* Info=This criteria at the bottom SHOULD >:( allow to made an animation when the user pass on the button "valid" */
+    text-align: start;
+    opacity: 1;
+    transition: 0.5s;
 }
+
+/* :visited="Allow to change properties when the user click after an <anchor> and <area> that have an "href" attribute"  at the bottom */
+
+/* !MISUNDERSTOOD PROBLEM:
+a:visited{
+    color: var(--color4);
+} */
+
+/* !MISUNDERSTOOD PROBLEM:
+.the_button > button:hover + #ref{
+    text-align: end;
+    opacity: 0;
+} */
 
 .card{
     background-color: rgb(112, 114, 110, 0.4);
