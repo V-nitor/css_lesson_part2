@@ -34,6 +34,33 @@ h6{
     color: var(--color2);
 }
 
+h1{
+    position: relative;
+}
+
+h1::after{
+    /* Info=An ::after must have a "content" empty or fulfilled to work in the code */
+    content: "";
+    position: absolute;
+    /* Info=If our ::after have an empty "content", we must give it an height, width and also a background! */
+    background: var(--color1);
+    height: 1px;
+    width: 100%;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%) scaleX(0);
+    /* animation: and (name_of_the_animation)="To be connected with the '@keyframes' with the same name (for us, at the bottom) and this seconds; forwards=To keep this new form after this animation" at the bottom */
+    animation: anim-h1 6s cubic-bezier(.55,.06,.68,.19) forwards;
+}
+
+/* @keyframes and (name_of_the_animation)="Create an animation to element in question. For us, the h1" at the bottom */
+@keyframes anim-h1 {
+    100% {
+        /* Info=If the element in question have already an attribute similar for the animation [for us: translateX(-50%)]. Don't forget to write the same attributes once again, otherwise they will be erase!! */
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
 .grid-container{
     margin: 15px 0;
     display: grid;
@@ -193,7 +220,7 @@ input[type="text"]::placeholder{
 
 ul{
     margin-top: 2rem;
-    font-family: Bloodlust;
+    font-family: 'Bloodlust' , cursive;
     text-transform: uppercase;
     font-size: 25px;
     color: var(--color2);
