@@ -51,11 +51,14 @@ h1::after{
     transform: translateX(-50%) scaleX(0);
     /* animation: and (name_of_the_animation)="To be connected with the '@keyframes' with the same name (for us, at the bottom) and this seconds; forwards=To keep this new form after this animation" at the bottom */
     animation: anim-h1 6s cubic-bezier(.55,.06,.68,.19) forwards;
+    /* transform-origin="Allow to show where the animation must start" at the bottom */
+    transform-origin: center;
 }
 
 /* @keyframes and (name_of_the_animation)="Create an animation to element in question. For us, the h1" at the bottom */
-@keyframes anim-h1 {
-    100% {
+@keyframes anim-h1{
+    /* Info=100% mean during the complete animation */
+    100%{
         /* Info=If the element in question have already an attribute similar for the animation [for us: translateX(-50%)]. Don't forget to write the same attributes once again, otherwise they will be erase!! */
         transform: translateX(-50%) scaleX(1);
     }
@@ -126,6 +129,8 @@ input{
     justify-content: space-evenly;
     margin-top: 30px;
     margin-left: 65px;
+    /* perspective="To use and playing a perspective for 3D animation" at the bottom */
+    perspective: 100px;
 }
 
 input[type="radio"]{
@@ -153,6 +158,44 @@ label{
     transition: 0.5s;
     /* user-select="It's like the pseudo-class '::selection' but only for a specific element" at the bottom */
     user-select: none;
+}
+
+label:first-of-type:hover{
+    /* infinite="Same thing than 'repeat', but for animation"; linear="Animation's speed is equal"; alternate="Animation's speed is randomized" at the bottom */
+    animation: label1 1s infinite linear;
+}
+
+@keyframes label1{
+    /* Info=50% mean during the half animation... etc. */
+    50%{
+        transform: scale(1.6);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+/* :nth-child()="Allow to select a specific child but WATCH OUT! This number is in reality equivalent to number child in the parent... For us, to the class 'radio-container' as parent. So, our 3rd label is the 6th child in true" at the bottom */
+label:nth-child(6):hover{
+    /* Tip= At the top, if we want to select children every other time. So between parentheses, instead number, it will be 'odd' for the numbers: 1, 3, 5, etc. & 'even' for the numbers: 2, 4, 6, etc.*/
+    animation: label2 0.5s infinite alternate;
+}
+
+/* WARNING= To make a 3D animation, never forget to create a 'perspective' to parent */
+@keyframes label2{
+    25%{
+        /* Info= Remember! Z mean perspective!! */
+        transform: translateZ(25px)
+    }
+    50%{
+        transform: translateZ(-25px)
+    }
+    75%{
+        transform: translateZ(12.5px)
+    }
+    100%{
+        transform: translateZ(0)
+    }
 }
 
 .e-mail{
