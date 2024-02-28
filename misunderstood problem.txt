@@ -1,0 +1,8 @@
+/* !With this function, it should have had an animation for the anchors which triggers at the same time as the button when the user pass over them... Isn't it?:
+
+.the_button > button:hover + #ref{
+    transform: translateX(25%);
+    opacity: 0;
+} */
+
+Sorry... I do my best ¯\_(ツ)_/¯ ...

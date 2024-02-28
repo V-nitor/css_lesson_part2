@@ -277,21 +277,20 @@ ul{
     text-decoration-line: none;
     color: var(--color3);
     /* Info=This criteria at the bottom SHOULD >:( allow to made an animation when the user pass on the button "valid" */
-    text-align: start;
+    display: block;
+    transform: translateX(0);
     opacity: 1;
     transition: 0.5s;
 }
 
 /* :visited="Allow to change properties when the user click after an <anchor> and <area> that have an "href" attribute"  at the bottom */
-
-/* !MISUNDERSTOOD PROBLEM:
-a:visited{
+#ref:visited{
     color: var(--color4);
-} */
+}
 
-/* !MISUNDERSTOOD PROBLEM:
+/* --- Mysterious problem... ---
 .the_button > button:hover + #ref{
-    text-align: end;
+    transform: translateX(25%);
     opacity: 0;
 } */
 
