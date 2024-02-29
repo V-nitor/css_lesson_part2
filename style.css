@@ -133,7 +133,7 @@ input{
     margin-top: 30px;
     margin-left: 65px;
     /* perspective="To use and playing a perspective for 3D animation" at the bottom */
-    perspective: 100px;
+    perspective: 150px;
 }
 
 input[type="radio"]{
@@ -318,7 +318,7 @@ body > img{
     /* Warning Emergency=The 'drop-shadow' must be glued with this parentheses to work correctly */
     filter: drop-shadow(6px 6px 1px var(--color3));
     z-index: -1;
-    animation: flydeath 30s infinite;
+    animation: flydeath 60s infinite;
     overflow: hidden;
 }
 
@@ -369,5 +369,36 @@ body > img{
         top: 3px;
         left: 3px;
         transform: rotate(90deg);
+    }
+}
+
+@media screen and (max-width: 695.5px) {
+    .shadow-polygon::after{
+        top: 66%;
+        left: 45%;
+    }
+
+    .radio-container{
+        perspective: 100px;
+    }
+
+    body > img{
+        animation: flydeath 30s infinite;
+    }
+}
+
+@media screen and (max-width: 545px) {
+    .radio-container{
+       flex-direction: column;
+       margin-left: 32.5px;
+    }
+
+    @keyframes label1{
+        50%{
+            transform: scale(1.2);
+        }
+        100%{
+            transform: scale(1);
+        }
     }
 }
